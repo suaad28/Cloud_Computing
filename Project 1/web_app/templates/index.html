@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Darius website</title>
+      {% else %}
+      <title>Welcome to Darius website</title>
+      {% endif %}
+    </head>
+
+        <form action="{{ url_for('upload')}}" method="post" enctype = "multipart/form-data">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <label>value:</label>
+            <input type = "file" name = "file" />
+            <input type="submit" value="upload" />
+        </form>
+
+        <form action="{{ url_for('find')}}" method="post">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <input type="submit" value="find" />
+        </form>
+
+        <table>
+</html>
