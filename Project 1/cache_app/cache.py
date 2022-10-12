@@ -105,6 +105,5 @@ def test():
     return render_template("test.html", img_data=encoded_img_data.decode('utf-8'))
 
 def cache_size(d):
-    #TODO: check with TA about cache capacity
     vlen = sum(len(v) for v in d.values())
     return vlen
