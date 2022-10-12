@@ -1,0 +1,29 @@
+.send-button {
+    background: #54C7C3;
+    width: 100%;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 25px;
+}
+
+
+.header-title {
+    margin: 5rem 0;
+}
+
+h1 {
+    font-size: 31px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #4c5357;
+}
+
+
+@media screen and (max-width:480px) {
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
