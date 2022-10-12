@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>A simple memcache</title>
+</head>
+<html>
+    <body>
+
+        <form action="{{ url_for('get')}}" method="post">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <input type="submit" value="get" />
+        </form>
+
+        <form action="{{ url_for('put')}}" method="post">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <label>value:</label>
+            <input type="text" name="value" />
+            <input type="submit" value="put" />
+        </form>
+
+        <form action="{{ url_for('invalidate')}}" method="post">
+            <label>key:</label>
+            <input type="text" name="key" />
+            <input type="submit" value="invalidate" />
+        </form>
+
+        <form action="{{ url_for('clear')}}" method="post">
+            <input type="submit" value="clear" />
+        </form>
+
+        <table>
+
+        {% for key, value in memcache.items() %}
+            <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+            </tr>
+        {% endfor %}
+        </table>
+
+    <body>
+</html>
