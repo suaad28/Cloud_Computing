@@ -2,7 +2,9 @@
  
 # Project Summary
 
-The website allows users to upload an image with a corresponding key. Once uploaded, the key will be stored in a database. If an image with the same key exists, it will be replaced in the file system to reflect the new image. A list of all the available keys stored in the database is also displayed. Users can search for an image by entering a key from this list and the resulting image will be displayed. The front end also shows the current statistics for the mem-cache which is also stored in the database. The basic application flow can be described with the following diagram:
+To create a website that allows users to upload an image with a corresponding key. Once uploaded, the key will be stored in a database. If an image with the same key exists, it will be replaced in the file system to reflect the new image. A list of all the available keys stored in the database is also displayed. Users can search for an image by entering a key from this list and the resulting image will be displayed. The front end also shows the current statistics for the mem-cache which is also stored in the database. The basic application flow can be described with the following diagram:
+
+![main_diagram](https://user-images.githubusercontent.com/80457657/195421537-2f672ef5-eca4-44ca-8d99-9da669913ada.PNG)
 
 #Features of the FRONT END
 1.  	Upload image with corresponding key
