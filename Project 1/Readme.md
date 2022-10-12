@@ -35,9 +35,12 @@ All the packages can be installed using pip.
 
 ## Database Schema
 
-We are using the remote MySQL server provided in the assignment handout. The credentials to log into the server are provided with documentation.
+We are using a remote MySQL server. 
 
+The following images show the skeleton on the tables created in the database.
+![image](https://user-images.githubusercontent.com/80457657/195425130-422f9a18-8b88-4f86-8593-f8d3747884ec.png)
 
+![image](https://user-images.githubusercontent.com/80457657/195425581-226ab432-4a99-466b-b546-96642edbd72c.png)
 
 ## Users
 1. Go to <IP:5000/> which opens the web page.
