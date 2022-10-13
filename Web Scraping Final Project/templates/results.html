@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Result</title>
+</head>
+<body>
+    <div class="background-image">
+    <div class="result">
+
+    <h3>Wordcloud:</h3>
+    <br> 
+
+        {% if img_data2 %}
+            <img id="picture" src="data:image/jpeg;base64,{{ img_data2 }}" width="600",height="600">
+        {% else %}
+            <h2> The key you requested does not have any image in the S3</h3>
+        {% endif %}
+        <br>
+        <form action="{{ url_for('search')}}">
+          <input type="submit" value="Go to Search Page" />
+        </form>
+        <br>
+    </div>
+</div>
+</body>
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .result {
+            text-align:center;
+            color: #000000;
+            text-transform: uppercase;
+            font-size: 60px;
+        }
+        .background-image{
+        background: url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"), rgb(0, 0, 0, 0.5);
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.8;
+        height: 100vh;
+        }
+</style>
+</html>

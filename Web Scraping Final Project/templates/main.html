@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Welcome to SkillSpace!</title>
+    
+</head>
+
+    <body>
+        <div class="background-image">
+        <div class="welcome">
+            <h1>SkillSpace</h1>
+            
+            <br/>
+            <p> Want to know what skills your dream company is looking for? Search here for one stop answer that will make you stand out</p>
+        
+        <ul>
+                <li><a href="{{ url_for('search')}}">search</a></li>
+                <br>
+                
+                <br/>
+
+        </ul>
+    </div>
+        <div>
+            {% block content%}
+
+            {% endblock %}
+        </div>
+    </div>
+    </body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .welcome{
+            position:absolute;
+            margin: 20% 30%;
+            text-align:center;
+        }
+        .welcome h1{
+            text-align:center;
+            color: #000000;
+            text-transform: uppercase;
+            font-size: 60px;
+        }
+        .welcome p{
+            color: ##000000;
+            font-size: 25px;
+        }
+        .welcome a{
+            border: 1px solid #fff;
+            padding:10px 25px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-top: 30px;
+            display: inline-block;
+            color: #000;
+        }
+        .background-image{
+            background: url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMTB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"), rgb(0, 0, 0, 0.5);
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            height: 100vh;
+        }
+    </style>
+</html>

@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <div class = "form">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <br>
+            <br>
+            <br>
+            <div>
+                {{ form.job_title.label }}
+                {{ form.job_title(size=35) }}
+            </div>
+            <div>
+                {{ form.location.label }}
+                {{ form.location(size=35) }}
+            </div>
+            <div>
+                {{ form.submit() }}
+
+            </div>
+
+        </form>
+    </div>
+    <div>
+
+        <form action="{{ url_for('invokebk')}} ">
+            <input type="submit" value="Submit" />
+        </form>
+        <br>
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .form{
+            margin: auto;
+            display: inline-block;
+            max-width:350px;
+            border-radius: 4px;
+            align:relative;
+            margin: 30% 40%;
+            text-align:center;
+            vertical-align: bottom;
+        }
+{% endblock %}
