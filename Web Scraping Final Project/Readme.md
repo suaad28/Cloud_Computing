@@ -9,10 +9,8 @@ This application searches the popular worldwide employment website Indeed.ca for
 The main web interface on λ1 will ask you to create an account to be able to use the service as shown in Figure 2. Once an account is created, an S3 bucket and noSQL DynamoDB will be created for that particular user. 
 
  
-
-Figure 2: Register an account with Lambda 
-
-The user will then log in using the credentials they created, and the flask will route the user to a web page where they can enter a job key word and a location. Once submitted, the second lambda function (λ2) will be invoked. λ2 is responsible for scrapping the job-hunting website using the parameters entered by the user, collect information on the job description, and then pass the data through amazon comprehend to get meaningful keywords related to the job description. The output is then stored in the DynamoDB and is also used to form charts and word cloud diagrams that will be stored in the S3 bucket. Once the search is finished, the user can click on a display button on the λ1 flask interface to view the S3 outputs. 
+ 
+The user will log in using the credentials they created, and the flask will route the user to a web page where they can enter a job key word and a location. Once submitted, the second lambda function (λ2) will be invoked. λ2 is responsible for scrapping the job-hunting website using the parameters entered by the user, collect information on the job description, and then pass the data through amazon comprehend to get meaningful keywords related to the job description. The output is then stored in the DynamoDB and is also used to form charts and word cloud diagrams that will be stored in the S3 bucket. Once the search is finished, the user can click on a display button on the λ1 flask interface to view the S3 outputs. 
 
 ## Functions: 
 
@@ -34,8 +32,8 @@ This folder consists files of lambda function, fetching and storing the results;
 
 2. Scrape_job_info.py – This is the main function to scrape individual jobs from indeed.ca. It consists of the  
 
-  1. def scrape_job_info():  Function is scrape individual job postings and saves results. Used by the function 'scrape_job_links’ 
+    1. def scrape_job_info():  Function is scrape individual job postings and saves results. Used by the function 'scrape_job_links’ 
 
-  2. def scrape_jobs_entities_per_page(list): Function is used to extract the individual jobs from the given page url. The job description of a job is extracted and passed to the ‘comprehend_text’ function which goes over the data and picks out the specific keywords related to skills. These entities are then appended to a list in the function body and are returned to the dynamodb for storage 
+    2. def scrape_jobs_entities_per_page(list): Function is used to extract the individual jobs from the given page url. The job description of a job is extracted and passed to the ‘comprehend_text’ function which goes over the data and picks out the specific keywords related to skills. These entities are then appended to a list in the function body and are returned to the dynamodb for storage 
 
-  3. get_result_pages_url.py – This function is to generate links to all subsequent search results pages. Takes an input argument 'URL'  which is the starting page URL, a page from search results. This then returns a list of all urls for the individual search pages. 
+    3. get_result_pages_url.py – This function is to generate links to all subsequent search results pages. Takes an input argument 'URL'  which is the starting page URL, a page from search results. This then returns a list of all urls for the individual search pages. 
